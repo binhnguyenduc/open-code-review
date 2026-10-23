@@ -122,6 +122,10 @@ Each comment must follow this structure:
 | end_line | integer | no | End line in the new file |
 | category | enum | no | bug, security, performance, maintainability, test, style, documentation, other |
 | severity | enum | no | critical, high, medium, low |
+| existing_code | string | no | The new-file lines `start_line`..`end_line`, copied verbatim |
+| suggestion_code | string | no | Complete replacement for `existing_code`, same indentation |
+
+Give `existing_code` and `suggestion_code` together, and only when the fix is confined to the commented lines. Omit both for design changes, fixes that touch other lines or files, or when unsure. Integrations render them as an applicable suggestion that replaces exactly that line range.
 
 ### Step 6: Classify and Report
 
